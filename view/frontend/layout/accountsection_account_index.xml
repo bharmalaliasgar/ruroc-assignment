@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+       <script src="DevTech_AccountSection::js/delete-account-ajax.js"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">
+                   Custom Account Section
+                </argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+          <block class="Magento\Sales\Block\Order\Recent"
+                 name="customer_account.accountsection"
+                 template="Magento_Sales::order/recent.phtml"/>
+
+            <block class="Magento\Customer\Block\Account\Dashboard\Info"
+                   name="customer_account_dashboard_info" as="info"
+                   template="Magento_Customer::account/dashboard/info.phtml"
+                   cacheable="false">
+                <container name="customer.account.dashboard.info.blocks"
+                           as="additional_blocks"/>
+            </block>
+
+            <block class="Magento\Customer\Block\Account\Dashboard\Address"
+                   name="customer_accountsection"
+                   template="Magento_Customer::account/dashboard/address.phtml"
+                   cacheable="false"/>
+
+            <block class="Magento\Framework\View\Element\Template"
+                   name="devtech_accountsection"
+                   template="DevTech_AccountSection::accountsection.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

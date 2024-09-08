@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="account_deletion_request_template" 
+              label="Account Deletion Request Email" 
+              file="account_deletion_request.html" 
+              type="html" 
+              area="frontend"
+              module="DevTech_AccountSection" />
+</config>
